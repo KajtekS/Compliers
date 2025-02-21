@@ -20,17 +20,21 @@ struct ASTNode {
 
     ASTNode(int value);
     ASTNode(ASTNode *left, char op, ASTNode *right);
+
+    void printAST(int indent = 0) const;
 };
 
 class Parser {
-  public:
+public:
     Parser(Lexer &lexer);
-    ASTNode* parseExpression();
+    ASTNode* parseExpression(); //Order of parsing Tokens matters, first as we know is +/- then *//, thats why there are two special functions.
     ASTNode* parseTerm();
     ASTNode* parseNumber();
 
-  private:
+private:
     Lexer &lexer;
+    Token currentToken;
+    void advance(); //Func which actualizes actual Token
 };
 
 #endif

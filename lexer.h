@@ -7,7 +7,7 @@
 #include <string>
 #include <stdexcept>
 using namespace std;
-
+// I create special type TokenType to translate my input into tokens which later I will put in tree.
 enum class TokenType {
     NUMBER,
     PLUS,
@@ -21,7 +21,7 @@ struct Token {
     TokenType type;
     int value; // Wartość dla liczb
 };
-
+//Lexer is special class with method getNextToken to tokenize input.
 class Lexer {
 public:
     Lexer(const std::string& input);

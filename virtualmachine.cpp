@@ -9,10 +9,10 @@ int VirtualMachine::execute(const vector<Instruction>& code){
                 break;
             }
             case static_cast<int>(OpCode::ADD): {
-                    int right = stack.back(); stack.pop_back();
-                    int left = stack.back(); stack.pop_back();
-                    stack.push_back(right + left);
-                    break;
+                int right = stack.back(); stack.pop_back();
+                int left = stack.back(); stack.pop_back();
+                stack.push_back(right + left);
+                break;
             }
             case static_cast<int>(OpCode::SUB): {
                 int right = stack.back(); stack.pop_back();

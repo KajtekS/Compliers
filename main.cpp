@@ -13,7 +13,7 @@ int main() {
     ASTNode* ast = parser.parseExpression();
 
     CodeGenerator generator;
-    std::vector<Instruction> code = generator.generateCode(ast);
+    vector<Instruction> code = generator.generateCode(ast);
 
     VirtualMachine vm;
     int result = vm.execute(code);

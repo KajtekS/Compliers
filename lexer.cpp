@@ -5,13 +5,13 @@ Lexer::Lexer(const std::string& input) : input(input), pos(0) {}
 
 Token Lexer::getNextToken() {
     while (pos < input.size() && isspace(input[pos])) {
-        pos++; // Pomijanie białych znaków
+        pos++; // Omitting blank marks
     }
-
+    // If we ended processing input whe add special token END
     if (pos >= input.size()) {
         return {TokenType::END, 0};
     }
-
+    //If we find new Token, we convert number from string type to int
     if (isdigit(input[pos])) {
         int value = 0;
         while (pos < input.size() && isdigit(input[pos])) {
@@ -20,7 +20,7 @@ Token Lexer::getNextToken() {
         }
         return {TokenType::NUMBER, value};
     }
-
+    //If we meet terminal sign we create special Token with value 0
     Token token;
     switch (input[pos]) {
         case '+': token.type = TokenType::PLUS; token.value = 0; break;
