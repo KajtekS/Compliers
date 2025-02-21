@@ -1,5 +1,4 @@
 # Compliers
-Compliers
 <h3>Problem</h3>
 
 I wrote this program to create a 'special' calculator that recognizes the order of mathematical operations, such as addition, subtraction, multiplication, and division. This problem can be solved more easily with traditional methods, but the goal of this program was to apply the principles of compiler theory and parsing in real-world applications. By using such a method, we not only gain deeper insights into how compilers work but also open up possibilities for solving more complex problems. This approach has a significant advantage: it scales well and can be extended to handle more sophisticated tasks beyond simple arithmetic.
